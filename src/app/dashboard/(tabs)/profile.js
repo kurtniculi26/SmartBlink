@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 import React from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import SignOutButton from '../../../Components/Buttons/SignOut';
 
 const Profile = () => {
   const handleEditPress = () => {
@@ -16,14 +17,7 @@ const Profile = () => {
           style={styles.profilePic}
         />
         <Text style={styles.userName}>John Doe</Text>
-      </View>
-
-      {/* Edit Button Section */}
-      <View style={styles.editButtonContainer}>
-        <TouchableOpacity style={styles.editButton} onPress={handleEditPress}>
-          <Ionicons name="create-outline" size={25} color="white" />
-          <Text style={styles.buttonText}>Edit Profile</Text>
-        </TouchableOpacity>
+        <Text style={styles.subscriptionType}>Free User</Text>
       </View>
 
       {/* About Section */}
@@ -55,6 +49,8 @@ const Profile = () => {
         </View>
       </TouchableOpacity>
 
+      <SignOutButton/>
+
     </ScrollView>
   );
 };
@@ -81,17 +77,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#242426',
   },
-  editButtonContainer: {
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  editButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#0c3e27',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 30,
+  subscriptionType: {
+    fontSize: 18,
+    color: '#C7C7CC',
   },
   buttonText: {
     marginLeft: 10,
